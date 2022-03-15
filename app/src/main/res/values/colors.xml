@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#449DD5</color>
+    <color name="textColorPrimary">#333333</color>
+
+    <color name="border">#CDCDB4</color>
+    <color name="ic_philosophy_background">#FFFFFF</color>
+
+    <color name="BLACK">#FF000000</color>
+    <color name="DKGRAY">#FF444444</color>
+    <color name="GRAY">#888888</color>
+    <color name="LTGRAY">#CCCCCC</color>
+    <color name="WHITE">#FFFFFF</color>
+    <color name="RED">#FF0000</color>
+    <color name="GREEN">#00FF00</color>
+    <color name="BLUE">#0000FF</color>
+    <color name="YELLOW">#FFFF00</color>
+    <color name="CYAN">#00FFFF</color>
+    <color name="MAGENTA">#FFFFFF</color>
+
+    <!-- 透明 -->
+    <color name="nothing">#00000000</color>
+    <!-- 半透明 -->
+    <color name="translucent">#556495ED</color>
+
+    <color name="sys_common_bg">#f5f4f0</color>
+    <color name="sys_common_word">#313031</color>
+
+    <color name="sys_leather_eye_bg">#E6DBBF</color>
+    <color name="sys_leather_word">#313031</color>
+
+    <color name="sys_protect_eye_bg">#ceebce</color>
+    <color name="sys_protect_eye_word">#313031</color>
+
+    <color name="sys_breen_bg">#b5bd9a</color>
+    <color name="sys_breen_word">#313031</color>
+
+    <color name="sys_blue_deep_bg">#001c29</color>
+    <color name="sys_blue_deep_word">#637079</color>
+
+    <color name="sys_dialog_setting_bg">#292c29</color>
+    <color name="sys_dialog_setting_line">#393839</color>
+    <color name="sys_dialog_setting_word">#636563</color>
+    <color name="sys_dialog_setting_word_red">#e8554d</color>
+    <color name="sys_dialog_setting_word_bright">#d6d7d6</color>
+
+</resources>

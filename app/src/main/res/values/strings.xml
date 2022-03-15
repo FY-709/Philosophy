@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Philosophy</string>
+    <string name="title_home">主页</string>
+    <string name="title_bookshelf">书架</string>
+    <string name="title_user">我的</string>
+
+    <string name="profile">Der Mensch ist ein Seil, geknüpft zwischen Tier und Übermensch - ein Seil über einem Abgrunde.</string>
+    <string name="longSentences">世界和人生本无意义，自然现实本身无所谓价值，生生死死只是生命的永恒涌流，在此涌流中无物永存。对于个体的生者来说，至深本质全然恐怖。在艺术上，靠变故、车祸、意外实现的悲剧都不是好的悲剧，真正好的悲剧是所有事情都是合逻辑的，所有人都是正常的，甚至是善良的，事情仍然无可挽回地缓缓滑向溃败，没有赢家，没有幸存者。但我不要舒适。我要的是神，是诗，是真实的危险，是自由，是善良，是罪孽。他让你的罪咎如同英雄的壮举，他让你的所有苦难都有了意义。饲养一只怪物，在刀锋上跳舞。</string>
+
+    <string-array name="sifting">
+        <item>书籍</item>
+        <item>人物</item>
+        <item>流派</item>
+    </string-array>
+</resources>

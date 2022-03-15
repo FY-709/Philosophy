@@ -1,0 +1,532 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "a3a1cac8c2d51175d7bc02757b788eda",
+    "entities": [
+      {
+        "tableName": "Books",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`bNum` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `bPic` TEXT, `bName` TEXT, `cNum` INTEGER NOT NULL, `bIntro` TEXT, `bContent` TEXT, FOREIGN KEY(`cNum`) REFERENCES `Characters`(`cNum`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "bNum",
+            "columnName": "bNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bPic",
+            "columnName": "bPic",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bName",
+            "columnName": "bName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cNum",
+            "columnName": "cNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bIntro",
+            "columnName": "bIntro",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bContent",
+            "columnName": "bContent",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "bNum"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Books_cNum",
+            "unique": false,
+            "columnNames": [
+              "cNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Books_cNum` ON `${TABLE_NAME}` (`cNum`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Characters",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "cNum"
+            ],
+            "referencedColumns": [
+              "cNum"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Bookshelf",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sNum` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sIdentifier` TEXT, `bNum` INTEGER NOT NULL, `bHashName` TEXT, `sChapter` INTEGER NOT NULL, `sProgress` INTEGER NOT NULL, FOREIGN KEY(`bNum`) REFERENCES `Books`(`bNum`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "sNum",
+            "columnName": "sNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sIdentifier",
+            "columnName": "sIdentifier",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bNum",
+            "columnName": "bNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bHashName",
+            "columnName": "bHashName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sChapter",
+            "columnName": "sChapter",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sProgress",
+            "columnName": "sProgress",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "sNum"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Bookshelf_bNum",
+            "unique": false,
+            "columnNames": [
+              "bNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Bookshelf_bNum` ON `${TABLE_NAME}` (`bNum`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Books",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bNum"
+            ],
+            "referencedColumns": [
+              "bNum"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Characters",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cNum` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cPic` TEXT, `cName` TEXT, `gNum` INTEGER NOT NULL, `cIntro` TEXT, `cLife` TEXT, `cThoughts` TEXT, `cWritings` TEXT, `cInfluence` TEXT, FOREIGN KEY(`gNum`) REFERENCES `Genres`(`gNum`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "cNum",
+            "columnName": "cNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cPic",
+            "columnName": "cPic",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cName",
+            "columnName": "cName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gNum",
+            "columnName": "gNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cIntro",
+            "columnName": "cIntro",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cLife",
+            "columnName": "cLife",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cThoughts",
+            "columnName": "cThoughts",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cWritings",
+            "columnName": "cWritings",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cInfluence",
+            "columnName": "cInfluence",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "cNum"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Characters_gNum",
+            "unique": false,
+            "columnNames": [
+              "gNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Characters_gNum` ON `${TABLE_NAME}` (`gNum`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Genres",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "gNum"
+            ],
+            "referencedColumns": [
+              "gNum"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Discussions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dNum` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uNum` INTEGER NOT NULL, `dLocation` TEXT, `dTime` INTEGER, `dContent` TEXT, FOREIGN KEY(`uNum`) REFERENCES `Users`(`uNum`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "dNum",
+            "columnName": "dNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uNum",
+            "columnName": "uNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dLocation",
+            "columnName": "dLocation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dTime",
+            "columnName": "dTime",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dContent",
+            "columnName": "dContent",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "dNum"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Discussions_uNum",
+            "unique": false,
+            "columnNames": [
+              "uNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Discussions_uNum` ON `${TABLE_NAME}` (`uNum`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uNum"
+            ],
+            "referencedColumns": [
+              "uNum"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Genres",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`gNum` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `gPic` TEXT, `gName` TEXT, `gIntro` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "gNum",
+            "columnName": "gNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gPic",
+            "columnName": "gPic",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gName",
+            "columnName": "gName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gIntro",
+            "columnName": "gIntro",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "gNum"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Users",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uNum` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uPic` TEXT, `uTel` TEXT, `uPwd` TEXT, `uName` TEXT, `uProfile` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "uNum",
+            "columnName": "uNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uPic",
+            "columnName": "uPic",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uTel",
+            "columnName": "uTel",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uPwd",
+            "columnName": "uPwd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uName",
+            "columnName": "uName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uProfile",
+            "columnName": "uProfile",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uNum"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "UsersCharacters",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uNum` INTEGER NOT NULL, `cNum` INTEGER NOT NULL, PRIMARY KEY(`uNum`, `cNum`), FOREIGN KEY(`uNum`) REFERENCES `Users`(`uNum`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`cNum`) REFERENCES `Characters`(`cNum`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "uNum",
+            "columnName": "uNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cNum",
+            "columnName": "cNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uNum",
+            "cNum"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_UsersCharacters_uNum",
+            "unique": false,
+            "columnNames": [
+              "uNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_UsersCharacters_uNum` ON `${TABLE_NAME}` (`uNum`)"
+          },
+          {
+            "name": "index_UsersCharacters_cNum",
+            "unique": false,
+            "columnNames": [
+              "cNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_UsersCharacters_cNum` ON `${TABLE_NAME}` (`cNum`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uNum"
+            ],
+            "referencedColumns": [
+              "uNum"
+            ]
+          },
+          {
+            "table": "Characters",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "cNum"
+            ],
+            "referencedColumns": [
+              "cNum"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "UsersGenres",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uNum` INTEGER NOT NULL, `gNum` INTEGER NOT NULL, PRIMARY KEY(`uNum`, `gNum`), FOREIGN KEY(`uNum`) REFERENCES `Users`(`uNum`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`gNum`) REFERENCES `Genres`(`gNum`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "uNum",
+            "columnName": "uNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gNum",
+            "columnName": "gNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uNum",
+            "gNum"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_UsersGenres_uNum",
+            "unique": false,
+            "columnNames": [
+              "uNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_UsersGenres_uNum` ON `${TABLE_NAME}` (`uNum`)"
+          },
+          {
+            "name": "index_UsersGenres_gNum",
+            "unique": false,
+            "columnNames": [
+              "gNum"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_UsersGenres_gNum` ON `${TABLE_NAME}` (`gNum`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uNum"
+            ],
+            "referencedColumns": [
+              "uNum"
+            ]
+          },
+          {
+            "table": "Genres",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "gNum"
+            ],
+            "referencedColumns": [
+              "gNum"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a3a1cac8c2d51175d7bc02757b788eda')"
+    ]
+  }
+}

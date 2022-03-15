@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.philosophy">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_philosophy"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_philosophy_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.philosophy.reader.ReaderActivity"
+            android:theme="@style/HwTxtFullScreen" />
+        <activity android:name=".search.SearchResultActivity" />
+        <activity android:name=".admin.InsertBookActivity" />
+        <activity android:name=".admin.InsertCharacterActivity" />
+        <activity android:name=".admin.InsertGenreActivity" />
+        <activity android:name=".admin.UpdateBookActivity" />
+        <activity android:name=".admin.UpdateCharacterActivity" />
+        <activity android:name=".admin.UpdateGenreActivity" />
+        <activity android:name=".details.AdminActivity" />
+        <activity android:name=".details.BookActivity" />
+        <activity android:name=".details.CharacterActivity" />
+        <activity android:name=".details.GenreActivity" />
+        <activity android:name=".details.UserActivity" />
+        <activity android:name=".lists.AdminBooksActivity" />
+        <activity android:name=".lists.AdminCharactersActivity" />
+        <activity android:name=".lists.AdminGenresActivity" />
+        <activity android:name=".lists.UserBooksActivity" />
+        <activity android:name=".lists.UserCharactersActivity" />
+        <activity android:name=".lists.UserGenresActivity" />
+        <activity android:name=".login.AdminLoginActivity" />
+        <activity android:name=".login.UserLoginActivity" />
+        <activity android:name=".login.UserRegisterActivity" />
+        <activity android:name=".user.FollowCharactersActivity" />
+        <activity android:name=".user.FollowGenresActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".LaunchActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

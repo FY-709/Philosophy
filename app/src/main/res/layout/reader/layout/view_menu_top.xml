@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sys_dialog_setting_bg"
+    android:orientation="horizontal"
+    android:paddingStart="10dp"
+    android:paddingTop="13dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="13dp">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:onClick="BackClick"
+        android:src="@mipmap/back" />
+
+    <TextView
+        android:id="@+id/txtreadr_menu_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="书籍名字"
+        android:textColor="@color/sys_dialog_setting_word_bright"
+        android:textSize="17sp" />
+</LinearLayout>
